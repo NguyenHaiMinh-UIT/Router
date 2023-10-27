@@ -1,0 +1,32 @@
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_top_behav xil_defaultlib.test_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3823] variable 'dout' might have multiple concurrent drivers [C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv:40]
+WARNING: [VRFC 10-3823] variable 'frameo_n' might have multiple concurrent drivers [C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv:41]
+WARNING: [VRFC 10-3823] variable 'valido_n' might have multiple concurrent drivers [C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv:42]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" Line 1. Module router_interface doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" Line 9. Module cb doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_testbench.sv" Line 1. Module router_testbench doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv" Line 1. Module router doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/Fixed_Prio.sv" Line 1. Module Fixed_Prio doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" Line 1. Module router_interface doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" Line 9. Module cb doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" Line 9. Module cb doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_testbench.sv" Line 1. Module router_testbench doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv" Line 1. Module router doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/Fixed_Prio.sv" Line 1. Module Fixed_Prio doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cb
+Compiling module xil_defaultlib.router_interface
+Compiling module xil_defaultlib.router_testbench
+Compiling module xil_defaultlib.Fixed_Prio
+Compiling module xil_defaultlib.router
+Compiling module xil_defaultlib.test_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_top_behav

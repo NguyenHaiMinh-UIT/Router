@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/Fixed_Prio.sv,1698050629,systemVerilog,,C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv,,Fixed_Prio,,uvm,,,,,,
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv,1698138549,systemVerilog,,C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv,,router,,uvm,,,,,,
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router/router.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv,1698157924,systemVerilog,,C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_testbench.sv,,router_interface,,uvm,,,,,,
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_testbench.sv,1698251152,systemVerilog,,C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/test_top.sv,,router_testbench,,uvm,,,,,,
+C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/test_top.sv,1698137467,systemVerilog,,,,test_top,,uvm,,,,,,
