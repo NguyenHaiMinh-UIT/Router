@@ -1,7 +1,9 @@
 # compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../Fixed_Prio.v" \
+"../../../../../router.v" \
+
 sv xil_defaultlib  \
-"../../../../../Fixed_Prio.sv" \
-"../../../../../router.sv" \
 "../../../../../router_interface.sv" \
 "../../../../../router_testbench.sv" \
 "../../../../../test_top.sv" \

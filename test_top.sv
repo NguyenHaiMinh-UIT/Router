@@ -14,5 +14,5 @@ module test_top(
         .frameo_n(rtr_io.frameo_n),
         .valido_n(rtr_io.valido_n)
     );
-    always #10 clock = ~clock;
+    always #1 clock = ~clock;
 endmodule : test_top

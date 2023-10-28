@@ -1,28 +1,59 @@
 program automatic router_testbench(router_interface.tb rtr_io);
-    // logic[1:0] dout;
+    logic[1:0] dout;
     initial begin
         // #0 rtr_io.cb = 0 ;
         #0
         rtr_io.reset_n <=1 ;
         rtr_io.cb.frame_n<=2'b11;
         rtr_io.cb.valid_n<=2'b11;
-        repeat(15) @(rtr_io.cb) ;
+//        repeat(15) @(rtr_io.cb) ;
         // forever #10 clk = ~clk;
     end
 
     initial
     fork
         //assert reset
-        rtr_io.reset_n=0;
+        #1rtr_io.reset_n=0;
 
         begin
-            rtr_io.reset_n = 0;
+            #2
+            rtr_io.reset_n = 1;
             rtr_io.cb.din <= 2'b00;
+            rtr_io.cb.frame_n <= 2'b00;
+            rtr_io.cb.valid_n <= 2'b11;
+            #5 // bat dau nhan packket
+            rtr_io.cb.din <= 2'b01;
+            rtr_io.cb.valid_n <= 2'b00;
+            #6
+            rtr_io.cb.din <= 2'b01;
+            rtr_io.cb.valid_n <= 2'b01;
+            #7
+            rtr_io.cb.din <= 2'b10;
+            
+            #8
+            rtr_io.cb.frame_n <= 2'b11;
+            rtr_io.cb.valid_n <= 2'b11;
+        
+        
+            #10
+            rtr_io.reset_n = 1;
+            rtr_io.cb.din <= 2'b01;
+            rtr_io.cb.frame_n <= 2'b00;
+            rtr_io.cb.valid_n <= 2'b11;
+            #13 // bat dau nhan packket
+            rtr_io.cb.din <= 2'b01;
+            rtr_io.cb.valid_n <= 2'b00;
+            #14
+            rtr_io.cb.din <= 2'b01;
+            #15
+            rtr_io.cb.din <= 2'b10;
+            rtr_io.cb.valid_n <= 2'b01;
+            #16
             rtr_io.cb.frame_n <= 2'b11;
             rtr_io.cb.valid_n <= 2'b11;
         end
         //deassert reset
-        #20 rtr_io.reset_n=1;
+       
         //din port1 control
         // begin
         //     #375;
@@ -70,58 +101,59 @@ program automatic router_testbench(router_interface.tb rtr_io);
         //     #60 rtr_io.cb.frame_n[0]=1;
         // end
         // second packet 
-        begin
-            // #375;
-            #40 rtr_io.cb.din[1]<=0;
-            #20 rtr_io.cb.din[1]<=1'bx;
-            #20 rtr_io.cb.din[1]<=1'b0;
-            #20 rtr_io.cb.din[1]<=1'b1;
-            #20 rtr_io.cb.din[1]<=1'b1;
-            #20 rtr_io.cb.din[1]<=1'b0;
-            #20 rtr_io.cb.din[1]<=1'b1;
-        end
-        //din port0 control
-        begin
-            // #375;
-            #40 rtr_io.cb.din[0]<=0;
-            #20 rtr_io.cb.din[0]<=1'bx;
-            #20 rtr_io.cb.din[0]<=1'b1;
-            #20 rtr_io.cb.din[0]<=1'b0;
-            #20 rtr_io.cb.din[0]<=1'b1;
-            #20 rtr_io.cb.din[0]<=1'b1;
-            #20 rtr_io.cb.din[0]<=1'b0;
-        end
-        // valid_n port 1 control
-        begin
-            // #375
-            repeat(2) @(rtr_io.cb);
-            rtr_io.cb.valid_n[1]<=1;
-            repeat(5) @(rtr_io.cb);
-            rtr_io.cb.valid_n[1]<=0;
-        end
-        //valid_n port 0 control
-        begin
-            // #375;
-            #80 rtr_io.cb.valid_n[0]<=0;
-            #20 rtr_io.cb.valid_n[0]<=1;
-        end
-        //frame_n port 1 control
-        begin
-            // #375;
-            repeat(7) @(rtr_io.cb);
-            rtr_io.cb.frame_n[1]<=0;
-            #40 rtr_io.cb.frame_n[1]<=1;
-        end
-        //frame_n port 0
-        begin
-            #375;
-            repeat(7) @(rtr_io.cb);
-            rtr_io.cb.frame_n[0]<=0;
-            #60 rtr_io.cb.frame_n[0]<=1;
-        end
+//        begin
+//            // #375;
+//            #40 rtr_io.cb.din[1]<=0;
+//            #20 rtr_io.cb.din[1]<=1'bx;
+//            #20 rtr_io.cb.din[1]<=1'b0;
+//            #20 rtr_io.cb.din[1]<=1'b1;
+//            #20 rtr_io.cb.din[1]<=1'b1;
+//            #20 rtr_io.cb.din[1]<=1'b0;
+//            #20 rtr_io.cb.din[1]<=1'b1;
+//        end
+//        //din port0 control
+//        begin
+//            // #375;
+//            #40 rtr_io.cb.din[0]<=0;
+//            #20 rtr_io.cb.din[0]<=1'bx;
+//            #20 rtr_io.cb.din[0]<=1'b1;
+//            #20 rtr_io.cb.din[0]<=1'b0;
+//            #20 rtr_io.cb.din[0]<=1'b1;
+//            #20 rtr_io.cb.din[0]<=1'b1;
+//            #20 rtr_io.cb.din[0]<=1'b0;
+//        end
+//        // valid_n port 1 control
+//        begin
+//            // #375
+//            repeat(2) @(rtr_io.cb);
+//            rtr_io.cb.valid_n[1]<=1;
+//            repeat(5) @(rtr_io.cb);
+//            rtr_io.cb.valid_n[1]<=0;
+//        end
+//        //valid_n port 0 control
+//        begin
+//            // #375;
+//            #80 rtr_io.cb.valid_n[0]<=0;
+//            #20 rtr_io.cb.valid_n[0]<=1;
+//        end
+//        //frame_n port 1 control
+//        begin
+//            // #375;
+//            repeat(7) @(rtr_io.cb);
+//            rtr_io.cb.frame_n[1]<=0;
+//            #40 rtr_io.cb.frame_n[1]<=1;
+//        end
+//        //frame_n port 0
+//        begin
+//            #375;
+//            repeat(7) @(rtr_io.cb);
+//            rtr_io.cb.frame_n[0]<=0;
+//            #60 rtr_io.cb.frame_n[0]<=1;
+//        end
     join
-
-
+initial begin
+   #30 $finish;
+    end
 endprogram
 
 /* program automatic router_testbench(router_interface.tb rtr_io);

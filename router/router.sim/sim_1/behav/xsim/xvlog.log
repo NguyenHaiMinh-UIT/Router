@@ -1,7 +1,3 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/Fixed_Prio.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Fixed_Prio
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module router
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_interface.sv" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/router_testbench.sv" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/night/Desktop/HK6/CE409/CE409_LAB2/test_top.sv" into library xil_defaultlib
